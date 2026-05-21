@@ -1,0 +1,24 @@
+{
+  "name": "react-shared-horizon",
+  "private": true,
+  "scripts": {
+    "build": "pnpm -r run build",
+    "dev": "pnpm -r --parallel run dev",
+    "typecheck": "pnpm -r run typecheck",
+    "test": "vitest",
+    "clean": "pnpm -r run clean",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "publish-packages": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "engines": {
+    "node": ">=20.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@9.15.0"
+}
