@@ -1,6 +1,6 @@
 {
   "name": "@horizon/vite-plugin",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Horizon shared Vite plugin for development tooling",
   "license": "UNLICENSED",
   "type": "module",
@@ -18,7 +18,9 @@
   },
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",

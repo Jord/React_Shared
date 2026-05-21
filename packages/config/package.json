@@ -1,6 +1,6 @@
 {
   "name": "@horizon/config",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Horizon Configuration Management for React Applications",
   "license": "UNLICENSED",
   "type": "module",
@@ -18,7 +18,9 @@
   },
   "main": "./dist/index.cjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "engines": {
     "node": ">=18"
   },
