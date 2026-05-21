@@ -1,0 +1,30 @@
+{
+  "name": "@horizon/config-exporter",
+  "version": "0.1.1",
+  "description": "CLI tool to export Azure App Configuration to a Horizon config.js file",
+  "license": "UNLICENSED",
+  "bin": {
+    "export-horizon-config": "dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit",
+    "clean": "rimraf dist"
+  },
+  "dependencies": {
+    "@azure/app-configuration": "^1.7.0",
+    "@azure/identity": "^4.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsup": "catalog:",
+    "typescript": "catalog:"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
