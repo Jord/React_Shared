@@ -1,0 +1,4 @@
+node_modules
+# This is the default export file. Ignore it so that when we test the script it keeps working directory clean.
+config.json
+config.js
