@@ -1,6 +1,6 @@
 {
   "name": "@horizon/config-exporter",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "CLI tool to export Azure App Configuration to a Horizon config.js file",
   "license": "UNLICENSED",
   "bin": {
