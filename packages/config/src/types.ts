@@ -1,4 +1,4 @@
-export type HorizonServiceCode = 'auth' | 'timesheets' | 'access-control' | 'common' | 'access-tokens' | 'logging' | 'file-attachment' | 'cross-references' | 'sky' | 'globals';
+export type HorizonServiceCode = 'auth' | 'action-items' | 'timesheets' | 'access-control' | 'common' | 'access-tokens' | 'logging' | 'file-attachment' | 'cross-references' | 'sky' | 'globals' | 'comments';
 
 export type HorizonApplicationCode = 'timesheets' | 'access-control' | 'auth' | 'sidebar-data-portal';
 

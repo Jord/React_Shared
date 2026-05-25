@@ -4,8 +4,10 @@ import { horizonApplicationDetails, horizonServiceDetails, resolveSuiteCode } fr
 const BASE_SERVICE_CODES: HorizonServiceCode[] = [
     'access-control',
     'access-tokens',
+    'action-items',
     'auth',
     'common',
+    'comments',
     'cross-references',
     'file-attachment',
     'globals',
