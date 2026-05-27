@@ -1,6 +1,7 @@
 import type { HorizonApplicationDetails, HorizonRuntimeConfig, HorizonServiceDetails } from "./types";
 
 export function resolveSuiteCode(horizonConfig: HorizonRuntimeConfig): string {
+    if (typeof window === 'undefined') return horizonConfig.defaultSuiteCode ?? '';
     const pathSuiteCode = window.location.pathname.split('/')[1];
     return (pathSuiteCode) ? pathSuiteCode : (horizonConfig.defaultSuiteCode ?? '');
 }
