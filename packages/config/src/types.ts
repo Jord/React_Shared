@@ -1,6 +1,56 @@
-export type HorizonServiceCode = 'auth' | 'action-items' | 'timesheets' | 'access-control' | 'common' | 'access-tokens' | 'logging' | 'file-attachment' | 'cross-references' | 'sky' | 'globals' | 'comments';
+// Please keep this consistent with Confluence Service Registry: https://jordinternational.atlassian.net/wiki/x/AgC6AQ
+export type HorizonServiceCode =
+    'access-control' |
+    'acknowledgements' |
+    'action-items' |
+    'auth' |
+    'comments' |
+    'companies' |
+    'cost-code-import' |
+    'cross-references' |
+    'dms' |
+    'email' |
+    'file-management' |
+    'globals' |
+    'jm-face-scan-reports' |
+    'jm-reporting' |
+    'jwt' |
+    'project-hub' |
+    'project-hub-email-and-docs' |
+    'project-references' |
+    'project-summaries' |
+    'logging' |
+    'qaproc-data-archive' |
+    'report-scheduler' |
+    'server-configuration' |
+    'sky-project-costing' |
+    'stamping' |
+    'timesheets'
+;
 
-export type HorizonApplicationCode = 'timesheets' | 'access-control' | 'auth' | 'sidebar-data-portal';
+// Please keep this consistent with Confluence Application Registry: https://jordinternational.atlassian.net/wiki/x/BYANCg
+export type HorizonApplicationCode =
+    'access-control' |
+    'auth' |
+    'companies' |
+    'dms' |
+    'error-logs' |
+    'file-management' |
+    'globals' |
+    'jm-face-scan-reports' |
+    'jm-reporting' |
+    'project-hub' |
+    'project-hub-email-and-docs' |
+    'project-summaries' |
+    'project-references' |
+    'outlook-sidebar' |
+    'redirect-manager' |
+    'report-scheduler' |
+    'server-configuration' |
+    'sidebar-data-portal' |
+    'sky-project-costing' |
+    'stamping' |
+    'timesheets';
 
 export type HorizonServiceRuntimeConfig = {
     host?: string;

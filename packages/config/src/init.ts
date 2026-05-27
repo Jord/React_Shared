@@ -3,16 +3,15 @@ import { horizonApplicationDetails, horizonServiceDetails, resolveSuiteCode } fr
 
 const BASE_SERVICE_CODES: HorizonServiceCode[] = [
     'access-control',
-    'access-tokens',
     'action-items',
     'auth',
-    'common',
     'comments',
     'cross-references',
-    'file-attachment',
+    'file-management',
     'globals',
+    'jwt',
     'logging',
-    'sky',
+    'sky-project-costing',
     'timesheets'
 ];
 const BASE_APP_CODES: HorizonApplicationCode[] = [

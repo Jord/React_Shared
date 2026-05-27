@@ -3,11 +3,11 @@ import type { Plugin } from "vite";
 import fs from 'node:fs';
 import path from 'node:path';
 import {generateProxyConfig, generateRuntimeConfigWithProxiedServices } from "./helpers";
-import type {HorizonRuntimeConfig} from "@horizon/config";
+import type {HorizonApplicationCode, HorizonRuntimeConfig} from "@horizon/config";
 
 export interface HorizonPluginOptions {
-  suiteCode: string;
-  applicationCode: string;
+  suiteCode?: string;
+  applicationCode: HorizonApplicationCode;
   port: number;
   proxyHorizonServices?: string[];
   horizonConfig?: HorizonRuntimeConfig;
@@ -31,13 +31,19 @@ export function createHorizonPlugin(options: HorizonPluginOptions): Plugin {
 
   return {
     name: 'horizon',
-    apply: 'serve',
 
     configResolved(config) {
       projectRoot = config.root;
     },
 
-    config() {
+    config(_, env) {
+
+      // Use a relative path when building for production
+      if (env.command === 'build') {
+        return {
+          base: './',
+        }
+      }
 
       const proxy = horizonConfig ? generateProxyConfig(suiteCode, horizonConfig, proxyHorizonServices) : {};
 
