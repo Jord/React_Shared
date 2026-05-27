@@ -3,11 +3,11 @@ import type { Plugin } from "vite";
 import fs from 'node:fs';
 import path from 'node:path';
 import {generateProxyConfig, generateRuntimeConfigWithProxiedServices } from "./helpers";
-import type {HorizonRuntimeConfig} from "@horizon/config";
+import type {HorizonApplicationCode, HorizonRuntimeConfig} from "@horizon/config";
 
 export interface HorizonPluginOptions {
-  applicationCode: string;
   suiteCode?: string;
+  applicationCode: HorizonApplicationCode;
   port: number;
   proxyHorizonServices?: string[];
   horizonConfig?: HorizonRuntimeConfig;
