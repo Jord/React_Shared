@@ -4,25 +4,26 @@ import fs from 'node:fs';
 import path from 'node:path';
 import {generateProxyConfig, generateRuntimeConfigWithProxiedServices } from "./helpers";
 import type {HorizonApplicationCode, HorizonRuntimeConfig} from "@horizon/config";
+import {horizonPorts} from "./horizonPorts";
 
 export interface HorizonPluginOptions {
-  suiteCode?: string;
   applicationCode: HorizonApplicationCode;
-  port: number;
+  suiteCode?: string;
+  port?: number;
   proxyHorizonServices?: string[];
   horizonConfig?: HorizonRuntimeConfig;
 }
 
 export function createHorizonPlugin(options: HorizonPluginOptions): Plugin {
   const {
-    suiteCode = 'zord',
     applicationCode,
-    port,
+    suiteCode = 'zord',
+    port = horizonPorts[applicationCode],
     proxyHorizonServices = [],
     horizonConfig,
   } = options;
 
-  if (!port) throw new Error('[horizonDevPlugin] This applications local dev port is required — see https://jordinternational.atlassian.net/wiki/x/BYANCg');
+  if (!port) throw new Error('[horizonDevPlugin] This applications local dev port could not be determined — see https://jordinternational.atlassian.net/wiki/x/BYANCg');
   if (!suiteCode) throw new Error('[horizonDevPlugin] suiteCode is required');
   if (!applicationCode) throw new Error('[horizonDevPlugin] applicationCode is required');
 
