@@ -43,8 +43,6 @@ export type HorizonApplicationCode =
     'project-hub-email-and-docs' |
     'project-summaries' |
     'project-references' |
-    'outlook-sidebar' |
-    'redirect-manager' |
     'report-scheduler' |
     'server-configuration' |
     'sidebar-data-portal' |
