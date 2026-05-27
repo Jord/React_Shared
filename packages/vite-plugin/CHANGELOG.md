@@ -1,5 +1,11 @@
 # @horizon/vite-plugin
 
+## 0.2.1
+
+### Patch Changes
+
+- 12eb734: automatically detect horizon dev application port
+
 ## 0.2.0
 
 ### Minor Changes
