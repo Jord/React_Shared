@@ -27,7 +27,7 @@ export function initHorizonConfig<
     TServices extends string = never,
     TApps extends string = never
 >(options?: HorizonConfigOptions<TServices, TApps>): ResolvedHorizonConfig<TServices, TApps> {
-    const raw = window.__HORIZON_CONFIG__ ?? {};
+    const raw = (typeof window !== 'undefined' ? window.__HORIZON_CONFIG__ : undefined) ?? {};
 
     const horizonConfig: HorizonRuntimeConfig = {
         defaultSuiteCode:     raw.defaultSuiteCode     ?? '',
