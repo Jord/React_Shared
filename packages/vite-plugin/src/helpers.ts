@@ -10,17 +10,11 @@ export function generateRuntimeConfigWithProxiedServices(
 ): HorizonRuntimeConfig {
     const generated = {
         ...runtimeConfig,
-        horizon: {
-            ...runtimeConfig.horizon,
-            services: {
-                ...runtimeConfig.horizon?.services,
-            }
-        }
     };
 
     for (const serviceCode of proxyHorizonServices) {
-        generated.horizon.services[serviceCode] = {
-            ...generated.horizon.services[serviceCode],
+        generated.services[serviceCode] = {
+            ...generated.services[serviceCode],
             host: `http://localhost:${port}`,
         }
     }
