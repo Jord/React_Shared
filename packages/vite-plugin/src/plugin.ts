@@ -6,8 +6,8 @@ import {generateProxyConfig, generateRuntimeConfigWithProxiedServices } from "./
 import type {HorizonRuntimeConfig} from "@horizon/config";
 
 export interface HorizonPluginOptions {
-  suiteCode: string;
   applicationCode: string;
+  suiteCode?: string;
   port: number;
   proxyHorizonServices?: string[];
   horizonConfig?: HorizonRuntimeConfig;
