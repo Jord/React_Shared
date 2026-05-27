@@ -31,13 +31,19 @@ export function createHorizonPlugin(options: HorizonPluginOptions): Plugin {
 
   return {
     name: 'horizon',
-    apply: 'serve',
 
     configResolved(config) {
       projectRoot = config.root;
     },
 
-    config() {
+    config(_, env) {
+
+      // Use a relative path when building for production
+      if (env.command === 'build') {
+        return {
+          base: './',
+        }
+      }
 
       const proxy = horizonConfig ? generateProxyConfig(suiteCode, horizonConfig, proxyHorizonServices) : {};
 
